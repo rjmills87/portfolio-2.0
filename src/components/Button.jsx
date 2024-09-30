@@ -7,11 +7,11 @@ export default function Button({
   ...props
 }) {
   const baseStyles =
-    "px-4 py-2 rounded-lg font-medium items-center justify-center";
+    "px-4 py-2 rounded-lg font-medium items-center justify-center transition ease-in-out duration-500";
 
   const variantStyles = {
     resumeDownload:
-      "flex items-center bg-blue-600 text-white hover:bg-blue-700",
+      "flex items-center bg-white text-blue-600 lg:bg-blue-600 lg:text-white hover:bg-blue-700",
   };
 
   const style = `${baseStyles} ${variantStyles[variant]}`;
