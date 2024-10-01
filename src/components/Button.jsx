@@ -10,11 +10,13 @@ export default function Button({
     "px-4 py-2 rounded-lg font-medium items-center justify-center transition ease-in-out duration-500";
 
   const variantStyles = {
-    resumeDownload:
-      "flex items-center bg-white text-blue-600 lg:bg-blue-600 lg:text-white hover:bg-blue-700",
+    resumeDownloadMobile:
+      " block lg:hidden flex items-center bg-white text-blue-600 hover:bg-blue-700",
+    resumeDownloadDesktop:
+      "hidden lg:flex items-center bg-blue-600 text-white hover:bg-blue-700",
   };
 
-  const style = `${baseStyles} ${variantStyles[variant]}`;
+  const style = `${baseStyles} ${variantStyles[variant]} `;
 
   return (
     <a className={style} href={href} download={download} {...props}>
