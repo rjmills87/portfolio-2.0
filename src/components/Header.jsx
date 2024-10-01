@@ -10,8 +10,8 @@ export default function Header() {
   return (
     <>
       <header className="relative mx-0 p-6 flex items-center justify-between lg:py-6 h-20 lg:h-auto lg:border-b-2 border-blue-600 lg:mx-20">
-        <a className="text-lg" href="#">
-          RhysMILLER<span>.</span>
+        <a className="flex text-2xl font-semibold" href="#">
+          RhysMILLER
         </a>
         <nav
           className={`fixed lg:static lg:translate-x-0 z-100 flex flex-col lg:flex-row gap-10 items-start min-h-screen lg:min-h-fit min-w-[50%] lg:min-w-max transition-transform duration-500 ease-in-out p-4 lg:p-0 top-0 lg:top-auto right-0 lg:right-auto bg-blue-600 lg:bg-white ${
