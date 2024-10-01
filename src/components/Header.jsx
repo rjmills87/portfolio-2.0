@@ -9,12 +9,12 @@ export default function Header() {
 
   return (
     <>
-      <header className="relative mx-0 p-4 flex items-center justify-between lg:py-6  lg:border-b-2 border-blue-600 lg:mx-20">
+      <header className="relative mx-0 p-6 flex items-center justify-between lg:py-6 h-20 lg:border-b-2 border-blue-600 lg:mx-20">
         <a href="#">
           RhysMILLER<span>.</span>
         </a>
         <nav
-          className={`fixed z-10 flex flex-col gap-10 items-start  min-h-screen min-w-[50%] transition-transform duration-500 ease-in-out p-4 top-0 right-0 bg-blue-600 ${
+          className={`absolute z-100 flex flex-col gap-10 items-start min-h-screen min-w-[50%] transition-transform duration-500 ease-in-out p-4 top-0 right-0 bg-blue-600 ${
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
