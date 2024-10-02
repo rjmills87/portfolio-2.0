@@ -14,6 +14,10 @@ export default function Button({
       " block lg:hidden flex items-center bg-white text-blue-600 hover:bg-blue-700",
     resumeDownloadDesktop:
       "hidden lg:flex items-center bg-blue-600 text-white hover:bg-blue-700",
+    heroContact:
+      "flex text-sm lg:text-base items-center bg-blue-600 text-white hover:bg-blue-700 hover:border-blue-700 border-2 border-blue-600 w-fit",
+    heroProjects:
+      "flex text-sm lg:text-base items-center bg-white text-gray-600 hover:bg-gray-600 hover:text-white border-2 border-gray-600 w-fit",
   };
 
   const style = `${baseStyles} ${variantStyles[variant]} `;

@@ -37,7 +37,7 @@ export default function Header() {
             <li className="cursor-pointer transition ease-in-out duration-500 hover:text-blue-600">
               About
             </li>
-            <li className=",cursor-pointer transition ease-in-out duration-500 hover:text-blue-600">
+            <li className="cursor-pointer transition ease-in-out duration-500 hover:text-blue-600">
               Contact
             </li>
           </ul>
