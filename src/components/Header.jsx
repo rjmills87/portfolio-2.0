@@ -7,6 +7,25 @@ import { useState } from "react";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const menuItems = [
+    {
+      name: "Home",
+      link: "/",
+    },
+    {
+      name: "About",
+      link: "#about",
+    },
+    {
+      name: "Projects",
+      link: "#projects",
+    },
+    {
+      name: "Contact",
+      link: "#contact",
+    },
+  ];
+
   return (
     <>
       <header className="relative mx-0 p-6 flex items-center justify-between lg:py-6 h-20 lg:h-auto lg:border-b-2 border-blue-600 lg:mx-20">
@@ -28,18 +47,14 @@ export default function Header() {
             />
           )}
           <ul className=" text-xl lg:text-lg text-white lg:text-black flex flex-col lg:flex-row items-start lg:items-center justify-between lg:justify-evenly gap-4 mt-20 lg:mt-0">
-            <li className="cursor-pointer transition ease-in-out duration-500 hover:text-blue-600">
-              Home
-            </li>
-            <li className="cursor-pointer transition ease-in-out duration-500 hover:text-blue-600">
-              Projects
-            </li>
-            <li className="cursor-pointer transition ease-in-out duration-500 hover:text-blue-600">
-              About
-            </li>
-            <li className="cursor-pointer transition ease-in-out duration-500 hover:text-blue-600">
-              Contact
-            </li>
+            {menuItems &&
+              menuItems.map((item) => (
+                <a key={item.name} href={item.link}>
+                  <li className="cursor-pointer transition ease-in-out duration-500 hover:text-blue-600">
+                    {item.name}
+                  </li>
+                </a>
+              ))}
           </ul>
           <Button
             variant="resumeDownloadMobile"
