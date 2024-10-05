@@ -12,7 +12,7 @@ export default function Hero() {
           <h1 className=" text-6xl md:text-7xl lg:text-8xl font-extrabold pb-4 lg:pb-8">
             <span className="text-blue-600">Front</span>end Developer
           </h1>
-          <p className="text-2xl lg:text-3xl text-gray-600 font-light pb-8">
+          <p className="text-2xl lg:text-3xl text-gray-600 font-light pb-8 leading-7">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
             accusantium nihil.
           </p>
