@@ -2,7 +2,7 @@ export default function About() {
   return (
     <>
       <div className=" flex flex-col justify-center items-center m-6 my-20 lg:mx-20">
-        <h2 className="text-5xl lg:text-6xl font-bold pb-8 text-center">
+        <h2 className="text-5xl lg:text-6xl font-bold pb-12 text-center">
           About<span className="text-blue-600">.</span>
         </h2>
         <p className="text-center text-lg font-light leading-7">

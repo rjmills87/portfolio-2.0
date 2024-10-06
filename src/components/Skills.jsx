@@ -2,29 +2,29 @@ export default function Skills() {
   const mySkills = [
     {
       skillName: "HTML",
-      skillIcon: "/src/assets/images/html-5.svg",
+      skillIcon: "/src/assets/images/skills/html-5.svg",
     },
     {
       skillName: "CSS",
-      skillIcon: "/src/assets/images/css-3.svg",
+      skillIcon: "/src/assets/images/skills/css-3.svg",
     },
     {
       skillName: "JavaScript",
-      skillIcon: "/src/assets/images/javascript.svg",
+      skillIcon: "/src/assets/images/skills/javascript.svg",
     },
     {
       skillName: "React JS",
-      skillIcon: "/src/assets/images/react.svg",
+      skillIcon: "/src/assets/images/skills/react.svg",
     },
     {
       skillName: "Tailwind CSS",
-      skillIcon: "/src/assets/images/tailwind.svg",
+      skillIcon: "/src/assets/images/skills/tailwind.svg",
     },
   ];
   return (
     <>
       <div className="my-20 lg:mx-20 lg:my-10">
-        <h2 className="text-5xl lg:text-6xl font-bold pb-8 text-center">
+        <h2 className="text-5xl lg:text-6xl font-bold pb-12 text-center">
           Skills<span className="text-blue-600">.</span>
         </h2>
         <div className="flex flex-wrap gap-8 justify-evenly items-center">

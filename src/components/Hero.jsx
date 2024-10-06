@@ -34,7 +34,7 @@ export default function Hero() {
         <div className="rounded-full border-solid border-2 p-5 border-blue-600 border-opacity-70">
           <img
             className="rounded-full max-h-[500px] w-auto border-dotted border-2 p-5 border-blue-600 border-opacity-70"
-            src="/src/assets/images/1699022497908.jpeg"
+            src="/src/assets/images/profile-pic.png"
             alt="Rhys Miller"
           />
         </div>
