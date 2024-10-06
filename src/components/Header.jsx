@@ -59,16 +59,16 @@ export default function Header() {
           <Button
             variant="resumeDownloadMobile"
             btnText="Resume"
-            href="#"
-            download="true"
+            href="/src/assets/Rhys-Miller-Resume.pdf"
+            download={true}
             icon={DownloadCircle}
           />
         </nav>
         <Button
           variant="resumeDownloadDesktop"
           btnText="Resume"
-          href="#"
-          download="true"
+          href="/src/assets/Rhys-Miller-Resume.pdf"
+          download={true}
           icon={DownloadCircle}
         />
         {!isMenuOpen && (
