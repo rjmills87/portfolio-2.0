@@ -1,8 +1,7 @@
 import Button from "./Button";
-import { DownloadCircle } from "iconoir-react";
-import { MenuScale } from "iconoir-react";
-import { Xmark } from "iconoir-react";
+import { DownloadCircle, MenuScale, Xmark } from "iconoir-react";
 import { useState } from "react";
+import { HashLink } from "react-router-hash-link";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,24 +13,24 @@ export default function Header() {
     },
     {
       name: "About",
-      link: "#about",
+      link: "/#about",
     },
     {
       name: "Projects",
-      link: "#projects",
+      link: "/#projects",
     },
     {
       name: "Contact",
-      link: "#contact",
+      link: "/#contact",
     },
   ];
 
   return (
     <>
       <header className="relative mx-0 p-6 flex items-center justify-between lg:py-6 h-20 lg:h-auto lg:border-b-2 border-blue-600 lg:mx-20">
-        <a className="flex items-center text-xl font-semibold" href="#">
+        <HashLink className="flex items-center text-xl font-semibold" to="/">
           RhysMILLER<span>.</span>
-        </a>
+        </HashLink>
         <nav
           className={`fixed lg:static lg:translate-x-0 z-100 flex flex-col lg:flex-row gap-10 items-start min-h-screen lg:min-h-fit min-w-[40%] lg:min-w-max transition-transform duration-500 ease-in-out p-4 lg:p-0 top-0 lg:top-auto right-0 lg:right-auto bg-blue-600 lg:bg-white ${
             isMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -49,11 +48,11 @@ export default function Header() {
           <ul className=" text-xl lg:text-lg text-white lg:text-black flex flex-col lg:flex-row items-start lg:items-center justify-between lg:justify-evenly gap-4 mt-20 lg:mt-0">
             {menuItems &&
               menuItems.map((item) => (
-                <a key={item.name} href={item.link}>
+                <HashLink smooth key={item.name} to={item.link}>
                   <li className="cursor-pointer transition ease-in-out duration-500 hover:text-blue-600">
                     {item.name}
                   </li>
-                </a>
+                </HashLink>
               ))}
           </ul>
           <Button
