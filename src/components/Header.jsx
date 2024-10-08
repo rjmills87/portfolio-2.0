@@ -27,7 +27,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="relative mx-0 p-6 flex items-center justify-between lg:py-6 h-20 lg:h-auto lg:border-b-2 border-blue-600 lg:mx-20">
+      <header className=" sticky top-0 bg-white mx-0 p-6 flex items-center justify-between lg:py-6 h-20 lg:h-auto lg:border-b-2 border-blue-600 lg:mx-20">
         <HashLink className="flex items-center text-xl font-semibold" to="/">
           RhysMILLER<span>.</span>
         </HashLink>
