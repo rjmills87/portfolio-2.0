@@ -4,7 +4,7 @@ import { ArrowUpRightCircle } from "iconoir-react";
 export default function Hero() {
   return (
     <>
-      <div className="flex flex-col lg:flex-row items-center justify-between m-6 gap-12 md:m-10 lg:m-20">
+      <div className="flex flex-col lg:flex-row items-center justify-between mx-6 my-32 gap-12 lg:mx-20">
         <div className="flex flex-col lg:w-2/3">
           <span className="text-2xl lg:text-3xl font-light pb-2 text-gray-600">
             Hi, I&apos;m Rhys 👋🏻
