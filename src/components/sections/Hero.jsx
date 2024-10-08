@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button from "../Button";
 import { ArrowUpRightCircle } from "iconoir-react";
 
 export default function Hero() {
