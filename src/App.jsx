@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import ProjectPage from "./pages/ProjectPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/projects/:id" element={<ProjectPage />} />
         </Routes>
         <Footer />
+        <ScrollToTopButton />
       </BrowserRouter>
     </>
   );
