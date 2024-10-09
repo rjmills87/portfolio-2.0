@@ -1,16 +1,7 @@
 import Project from "../components/Project";
+import projects from "../data/projects";
 
 export default function Projects() {
-  const myProjects = [
-    {
-      id: 1,
-      name: "Dino Studio",
-      description:
-        "Dino Studio is an exciting educational app to learn all about Dinosaurs.",
-      screenshot: "/src/assets/images/projects/dino-studio-screenshot.png",
-      src: "#",
-    },
-  ];
   return (
     <>
       <div
@@ -21,8 +12,8 @@ export default function Projects() {
           Projects<span className="text-blue-600">.</span>
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 justify-center items-center">
-          {myProjects &&
-            myProjects.map((project) => (
+          {projects &&
+            projects.map((project) => (
               <div key={project.id}>
                 <Project
                   name={project.name}
