@@ -1,4 +1,5 @@
 import "./App.css";
+import projects from "./data/projects";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ProjectPage from "./pages/ProjectPage";
@@ -13,7 +14,10 @@ export default function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/projects/:id" element={<ProjectPage />} />
+          <Route
+            path="/projects/:id"
+            element={<ProjectPage projects={projects} />}
+          />
         </Routes>
         <Footer />
         <ScrollToTopButton />

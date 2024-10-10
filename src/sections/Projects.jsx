@@ -19,7 +19,7 @@ export default function Projects() {
                   name={project.name}
                   screenshot={project.screenshot}
                   description={project.description}
-                  src={project.src}
+                  src={`/projects/${project.id}`}
                   alt={project.name}
                 />
               </div>
