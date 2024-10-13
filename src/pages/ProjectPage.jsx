@@ -39,13 +39,13 @@ export default function ProjectPage({ projects }) {
         <div className="flex gap-4">
           <Button
             btnText="Live Site"
-            variant="projectLiveLink"
+            variant="projectPage"
             href="#"
             icon={ArrowUpRightCircle}
           />
           <Button
             btnText="View Github Repository"
-            variant="projectRepoLink"
+            variant="projectPage"
             href="#"
             icon={ArrowUpRightCircle}
           />
