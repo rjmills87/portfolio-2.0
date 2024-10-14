@@ -34,33 +34,33 @@ The team also leveraged various development tools, such as **ESLint** for code q
 `,
     techStack: [
       {
-        techIcon: "",
+        techIcon: "/src/assets/images/skills/html-5.svg",
         techName: "HTML5",
       },
       {
-        techIcon: "",
+        techIcon: "/src/assets/images/skills/css-3.svg",
         techName: "CSS3",
       },
       {
-        techIcon: "",
+        techIcon: "/src/assets/images/skills/javascript.svg",
         techName: "JavaScript",
       },
       {
-        techIcon: "",
-        techName: "Bootstrap 5",
-      },
-      {
-        techIcon: "",
+        techIcon: "/src/assets/images/skills/react.svg",
         techName: "React",
       },
       {
-        techIcon: "",
+        techIcon: "/src/assets/images/skills/bootstrap.svg",
+        techName: "Bootstrap 5",
+      },
+      {
+        techIcon: "/src/assets/images/skills/vite.svg",
         techName: "Vite",
       },
     ],
     screenshot: "/src/assets/images/projects/dino-studio-screenshot.png",
-    liveLink: "#",
-    repoLink: "#",
+    liveLink: "https://dino-studio.netlify.app/",
+    repoLink: "https://github.com/chingu-voyages/v48-tier2-team-14",
   },
 ];
 
