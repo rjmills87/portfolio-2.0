@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import Button from "../components/Button";
-import { ArrowUpRightCircle } from "iconoir-react";
+import { Link } from "react-router-dom";
+import { ArrowUpRightCircle, ArrowLeftCircle } from "iconoir-react";
 
 export default function ProjectPage({ projects }) {
   const { id } = useParams();
@@ -74,7 +75,7 @@ export default function ProjectPage({ projects }) {
               ))}
           </div>
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 mb-10">
           <Button
             btnText="Live Site"
             variant="projectPage"
@@ -90,6 +91,9 @@ export default function ProjectPage({ projects }) {
             icon={ArrowUpRightCircle}
           />
         </div>
+        <Link to="/">
+          <Button btnText="Back" variant="backButton" icon={ArrowLeftCircle} />
+        </Link>
       </section>
     </>
   );

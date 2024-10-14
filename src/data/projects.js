@@ -3,7 +3,7 @@ const projects = [
     id: "1",
     name: "Dino Studio",
     summary:
-      "Dino Studio was built collaboratively by taking part in a Chingu.io Voyage. The project was designed and built over a 6-week period, utilising Agile Development principles",
+      "Dino Studio was built collaboratively by taking part in a Chingu.io Voyage. The project was designed and built over a 6-week period, utilising Agile Development principles.",
     description: `
 
 Dino Studio was built collaboratively by taking part in a Chingu.io Voyage. The project was designed and built over a 6-week period, utilising Agile Development principles.
