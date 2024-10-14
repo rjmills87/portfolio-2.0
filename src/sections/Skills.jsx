@@ -20,6 +20,18 @@ export default function Skills() {
       skillName: "Tailwind CSS",
       skillIcon: "/src/assets/images/skills/tailwind.svg",
     },
+    {
+      skillName: "Git",
+      skillIcon: "/src/assets/images/skills/git.svg",
+    },
+    {
+      skillName: "WordPress",
+      skillIcon: "/src/assets/images/skills/wordpress.svg",
+    },
+    {
+      skillName: "PhP",
+      skillIcon: "/src/assets/images/skills/php.svg",
+    },
   ];
   return (
     <>
