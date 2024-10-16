@@ -2,10 +2,12 @@ import Button from "./Button";
 import { DownloadCircle, MenuScale, Xmark } from "iconoir-react";
 import { useState } from "react";
 import { HashLink } from "react-router-hash-link";
-import { Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const menuItems = [
     {
@@ -25,6 +27,19 @@ export default function Header() {
       link: "#contact",
     },
   ];
+
+  // Function to handle scrolling back to home from another route
+  const handleNavClick = (hashLink) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.querySelector(hashLink);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100); // Allow time for the home page to render
+    }
+  };
 
   return (
     <header className="sticky top-0 bg-white mx-0 p-6 flex items-center justify-between lg:py-6 h-20 lg:h-auto lg:border-b-2 border-blue-600 lg:mx-20">
@@ -52,9 +67,15 @@ export default function Header() {
               className="cursor-pointer transition ease-in-out duration-500 hover:text-blue-600"
             >
               {item.link.startsWith("#") ? (
-                <HashLink smooth to={item.link}>
-                  {item.name}
-                </HashLink>
+                location.pathname === "/" ? (
+                  // Use HashLink when already on the homepage
+                  <HashLink smooth to={item.link}>
+                    {item.name}
+                  </HashLink>
+                ) : (
+                  // Navigate back to the homepage and then scroll
+                  <a onClick={() => handleNavClick(item.link)}>{item.name}</a>
+                )
               ) : (
                 <Link to={item.link}>{item.name}</Link>
               )}
