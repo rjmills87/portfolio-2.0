@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import fadeIn from "../animations/animations";
+
 export default function Skills() {
   const mySkills = [
     {
@@ -35,7 +38,13 @@ export default function Skills() {
   ];
   return (
     <>
-      <div className="my-20 lg:mx-20 lg:my-10">
+      <motion.div
+        className="my-20 lg:mx-20 lg:my-10"
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2 className="text-5xl lg:text-6xl font-bold pb-12 text-center">
           Skills<span className="text-blue-600">.</span>
         </h2>
@@ -62,7 +71,7 @@ export default function Skills() {
               </div>
             ))}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
