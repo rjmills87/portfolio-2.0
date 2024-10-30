@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import Button from "../components/Button";
-import { Link } from "react-router-dom";
 import { ArrowUpRightCircle, ArrowLeftCircle } from "iconoir-react";
 
 export default function ProjectPage({ projects }) {
@@ -94,9 +93,12 @@ export default function ProjectPage({ projects }) {
             icon={ArrowUpRightCircle}
           />
         </div>
-        <Link to="/">
-          <Button btnText="Back" variant="backButton" icon={ArrowLeftCircle} />
-        </Link>
+        <Button
+          btnText="Back"
+          variant="backButton"
+          icon={ArrowLeftCircle}
+          href="/"
+        />
       </section>
     </>
   );

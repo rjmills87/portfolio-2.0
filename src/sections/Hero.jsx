@@ -20,13 +20,13 @@ export default function Hero() {
             <Button
               btnText="Get in touch"
               variant="heroContact"
-              href="#"
+              href="#contact"
               icon={ArrowUpRightCircle}
             />
             <Button
               btnText="Browse Projects"
               variant="heroProjects"
-              href="#"
+              href="#projects"
               icon={ArrowUpRightCircle}
             />
           </div>
