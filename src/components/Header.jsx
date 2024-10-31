@@ -48,7 +48,7 @@ export default function Header() {
       initial="hidden"
       animate="visible"
       variants={animations.headerVariant}
-      className="sticky top-0 bg-white mx-0 p-6 flex items-center justify-between lg:py-6 h-20 lg:h-auto lg:border-b-2 border-blue-600 lg:mx-20"
+      className="sticky z-50 top-0 bg-white mx-0 p-6 flex items-center justify-between lg:py-6 h-20 lg:h-auto lg:border-b-2 border-blue-600 lg:mx-20"
     >
       <div>
         <Link className="flex items-center text-xl font-semibold" to="/">
