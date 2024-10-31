@@ -1,7 +1,7 @@
 import Project from "../components/Project";
 import projects from "../data/projects";
 import { motion } from "framer-motion";
-import fadeInVariant from "../animations/animations";
+import animations from "../animations/animations";
 
 export default function Projects() {
   return (
@@ -9,7 +9,7 @@ export default function Projects() {
       <motion.div
         id="projects"
         className=" flex flex-col justify-center items-center scroll-mt-36 m-6 my-32 lg:mx-20"
-        variants={fadeInVariant}
+        variants={animations.fadeInVariant}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}

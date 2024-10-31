@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import fadeInVariant from "../animations/animations";
+import animations from "../animations/animations";
 
 export default function About() {
   return (
@@ -7,7 +7,7 @@ export default function About() {
       <motion.div
         id="about"
         className=" flex flex-col justify-center items-center scroll-mt-36 m-6 my-20 lg:mx-20"
-        variants={fadeInVariant}
+        variants={animations.fadeInVariant}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}

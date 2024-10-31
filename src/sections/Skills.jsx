@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import fadeInVariant from "../animations/animations";
+import animations from "../animations/animations";
 
 export default function Skills() {
   const mySkills = [
@@ -40,7 +40,7 @@ export default function Skills() {
     <>
       <motion.div
         className="my-20 lg:mx-20 lg:my-10"
-        variants={fadeInVariant}
+        variants={animations.fadeInVariant}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}

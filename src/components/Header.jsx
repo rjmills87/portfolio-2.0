@@ -4,6 +4,7 @@ import { useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import animations from "../animations/animations";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,10 +44,16 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 bg-white mx-0 p-6 flex items-center justify-between lg:py-6 h-20 lg:h-auto lg:border-b-2 border-blue-600 lg:mx-20">
+    <motion.header
+      initial="hidden"
+      animate="visible"
+      variants={animations.headerVariant}
+      className="sticky top-0 bg-white mx-0 p-6 flex items-center justify-between lg:py-6 h-20 lg:h-auto lg:border-b-2 border-blue-600 lg:mx-20"
+    >
       <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
+        initial="hidden"
+        animate="visible"
+        variants={animations.logoVariant}
       >
         <Link className="flex items-center text-xl font-semibold" to="/">
           RhysMILLER<span>.</span>
@@ -113,6 +120,6 @@ export default function Header() {
           aria-label="Open Menu"
         />
       )}
-    </header>
+    </motion.header>
   );
 }
