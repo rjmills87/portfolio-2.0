@@ -1,12 +1,18 @@
 import Project from "../components/Project";
 import projects from "../data/projects";
+import { motion } from "framer-motion";
+import animations from "../animations/animations";
 
 export default function Projects() {
   return (
     <>
-      <div
+      <motion.div
         id="projects"
         className=" flex flex-col justify-center items-center scroll-mt-36 m-6 my-32 lg:mx-20"
+        variants={animations.fadeInVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
       >
         <h2 className="text-5xl lg:text-6xl font-bold pb-12 text-center">
           Projects<span className="text-blue-600">.</span>
@@ -25,7 +31,7 @@ export default function Projects() {
               </div>
             ))}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

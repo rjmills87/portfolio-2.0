@@ -1,3 +1,5 @@
+import { HashLink } from "react-router-hash-link";
+
 export default function Button({
   btnText,
   href,
@@ -26,10 +28,25 @@ export default function Button({
 
   const style = `${baseStyles} ${variantStyles[variant]} `;
 
-  return (
-    <a className={style} href={href} download={download} {...props}>
-      {btnText}
-      {Icon && <Icon className="ml-2" />}
-    </a>
-  );
+  if (download === true) {
+    return (
+      <a className={style} href={href} download={download} {...props}>
+        {btnText}
+        {Icon && <Icon className="ml-2" />}
+      </a>
+    );
+  } else {
+    return (
+      <HashLink
+        className={style}
+        smooth
+        to={href}
+        download={download}
+        {...props}
+      >
+        {btnText}
+        {Icon && <Icon className="ml-2" />}
+      </HashLink>
+    );
+  }
 }
