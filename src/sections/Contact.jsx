@@ -1,6 +1,6 @@
 import ContactForm from "../components/ContactForm";
 import { motion } from "framer-motion";
-import fadeIn from "../animations/animations";
+import fadeInVariant from "../animations/animations";
 
 export default function Contact() {
   return (
@@ -8,7 +8,7 @@ export default function Contact() {
       <motion.div
         id="contact"
         className="m-6 my-20 lg:mx-20"
-        variants={fadeIn}
+        variants={fadeInVariant}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
