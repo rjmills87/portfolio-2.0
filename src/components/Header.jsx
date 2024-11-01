@@ -73,7 +73,7 @@ export default function Header() {
           {menuItems.map((item) => (
             <li
               key={item.name}
-              className="cursor-pointer transition ease-in-out duration-500 hover:text-blue-600"
+              className="cursor-pointer transition ease-in-out duration-700 hover:text-blue-600 hover:underline decoration-transparent hover:decoration-blue-600 underline-offset-4"
             >
               {item.link.startsWith("#") ? (
                 location.pathname === "/" ? (
