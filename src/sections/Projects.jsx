@@ -8,7 +8,7 @@ export default function Projects() {
     <>
       <motion.div
         id="projects"
-        className=" flex flex-col justify-center items-center scroll-mt-36 m-6 my-32 lg:mx-20"
+        className=" flex flex-col justify-center items-center scroll-mt-[100px] m-6 my-32 lg:mx-20"
         variants={animations.fadeInVariant}
         initial="hidden"
         whileInView="visible"
