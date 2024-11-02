@@ -5,6 +5,7 @@ import { HashLink } from "react-router-hash-link";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import animations from "../animations/animations";
+import scrollToTop from "../animations/scrollToTop";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,7 +52,11 @@ export default function Header() {
       className="sticky z-50 top-0 bg-white mx-0 p-6 flex items-center justify-between lg:py-6 h-20 lg:h-auto lg:border-b-2 border-blue-600 lg:mx-20"
     >
       <div>
-        <Link className="flex items-center text-xl font-semibold" to="/">
+        <Link
+          onClick={scrollToTop}
+          className="flex items-center text-xl font-semibold"
+          to="/"
+        >
           RhysMILLER<span>.</span>
         </Link>
       </div>
@@ -73,7 +78,7 @@ export default function Header() {
           {menuItems.map((item) => (
             <li
               key={item.name}
-              className="cursor-pointer transition ease-in-out duration-500 hover:text-blue-600"
+              className="cursor-pointer transition ease-in-out duration-700 hover:text-blue-600 hover:underline decoration-transparent hover:decoration-blue-600 underline-offset-4"
             >
               {item.link.startsWith("#") ? (
                 location.pathname === "/" ? (
@@ -86,7 +91,9 @@ export default function Header() {
                   <a onClick={() => handleNavClick(item.link)}>{item.name}</a>
                 )
               ) : (
-                <Link to={item.link}>{item.name}</Link>
+                <Link onClick={scrollToTop} to={item.link}>
+                  {item.name}
+                </Link>
               )}
             </li>
           ))}

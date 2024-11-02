@@ -1,15 +1,9 @@
 import { useEffect, useState } from "react";
 import { ArrowUp } from "iconoir-react";
+import scrollToTop from "../animations/scrollToTop";
 
 export default function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   useEffect(() => {
     const toggleVisibility = () => {
