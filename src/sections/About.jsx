@@ -16,12 +16,11 @@ export default function About() {
           About<span className="text-blue-600">.</span>
         </h2>
         <p className="text-center text-lg font-light leading-7">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos odit
-          unde cumque similique ex? Omnis laborum neque sed repudiandae repellat
-          voluptates, facere magnam molestias, quaerat, eveniet numquam tempore
-          non consectetur voluptatibus modi voluptatem deserunt nobis! A esse
-          deserunt nihil magnam ratione corporis, quos cupiditate voluptatum
-          unde possimus dolore omnis earum.
+          I&apos;m Rhys, a web developer based in Ipswich, UK, with a passion
+          for crafting engaging and user-friendly digital experiences. I&apos;m
+          driven by a desire to learn and grow, constantly exploring the latest
+          web technologies to build sleek, responsive websites that captivate
+          users.
         </p>
       </motion.div>
     </>

@@ -21,8 +21,8 @@ export default function Hero() {
             <span className="text-blue-600">.</span>
           </h1>
           <p className="text-2xl lg:text-3xl text-gray-600 font-light pb-8 leading-7">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-            accusantium nihil.
+            I love to craft websites that are both visually appealing and
+            user-friendly.
           </p>
           <div className="flex items-center gap-4">
             <Button
