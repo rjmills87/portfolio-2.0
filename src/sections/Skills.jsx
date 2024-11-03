@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import animations from "../animations/animations";
+
 export default function Skills() {
   const mySkills = [
     {
@@ -20,10 +23,28 @@ export default function Skills() {
       skillName: "Tailwind CSS",
       skillIcon: "/src/assets/images/skills/tailwind.svg",
     },
+    {
+      skillName: "Git",
+      skillIcon: "/src/assets/images/skills/git.svg",
+    },
+    {
+      skillName: "WordPress",
+      skillIcon: "/src/assets/images/skills/wordpress.svg",
+    },
+    {
+      skillName: "PhP",
+      skillIcon: "/src/assets/images/skills/php.svg",
+    },
   ];
   return (
     <>
-      <div className="my-20 lg:mx-20 lg:my-10">
+      <motion.div
+        className="my-20 lg:mx-20 lg:my-10"
+        variants={animations.fadeInVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2 className="text-5xl lg:text-6xl font-bold pb-12 text-center">
           Skills<span className="text-blue-600">.</span>
         </h2>
@@ -50,7 +71,7 @@ export default function Skills() {
               </div>
             ))}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

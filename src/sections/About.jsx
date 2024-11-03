@@ -1,9 +1,16 @@
+import { motion } from "framer-motion";
+import animations from "../animations/animations";
+
 export default function About() {
   return (
     <>
-      <div
+      <motion.div
         id="about"
         className=" flex flex-col justify-center items-center scroll-mt-36 m-6 my-20 lg:mx-20"
+        variants={animations.fadeInVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
       >
         <h2 className="text-5xl lg:text-6xl font-bold pb-12 text-center">
           About<span className="text-blue-600">.</span>
@@ -16,7 +23,7 @@ export default function About() {
           deserunt nihil magnam ratione corporis, quos cupiditate voluptatum
           unde possimus dolore omnis earum.
         </p>
-      </div>
+      </motion.div>
     </>
   );
 }

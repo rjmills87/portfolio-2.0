@@ -2,10 +2,15 @@ import Button from "./Button";
 import { DownloadCircle, MenuScale, Xmark } from "iconoir-react";
 import { useState } from "react";
 import { HashLink } from "react-router-hash-link";
-import { Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import animations from "../animations/animations";
+import scrollToTop from "../animations/scrollToTop";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const menuItems = [
     {
@@ -26,11 +31,35 @@ export default function Header() {
     },
   ];
 
+  // Function to handle scrolling back to home from another route
+  const handleNavClick = (hashLink) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.querySelector(hashLink);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100); // Allow time for the home page to render
+    }
+  };
+
   return (
-    <header className="sticky top-0 bg-white mx-0 p-6 flex items-center justify-between lg:py-6 h-20 lg:h-auto lg:border-b-2 border-blue-600 lg:mx-20">
-      <Link className="flex items-center text-xl font-semibold" to="/">
-        RhysMILLER<span>.</span>
-      </Link>
+    <motion.header
+      initial="hidden"
+      animate="visible"
+      variants={animations.headerVariant}
+      className="sticky z-50 top-0 bg-white mx-0 p-6 flex items-center justify-between lg:py-6 h-20 lg:h-auto lg:border-b-2 border-blue-600 lg:mx-20"
+    >
+      <div>
+        <Link
+          onClick={scrollToTop}
+          className="flex items-center text-xl font-semibold"
+          to="/"
+        >
+          RhysMILLER<span>.</span>
+        </Link>
+      </div>
       <nav
         className={`fixed lg:static lg:translate-x-0 z-100 flex flex-col lg:flex-row gap-10 items-start min-h-screen lg:min-h-fit min-w-[40%] lg:min-w-max transition-transform duration-500 ease-in-out p-4 lg:p-0 top-0 lg:top-auto right-0 lg:right-auto bg-blue-600 lg:bg-white ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -49,14 +78,22 @@ export default function Header() {
           {menuItems.map((item) => (
             <li
               key={item.name}
-              className="cursor-pointer transition ease-in-out duration-500 hover:text-blue-600"
+              className="cursor-pointer transition ease-in-out duration-700 hover:text-blue-600 hover:underline decoration-transparent hover:decoration-blue-600 underline-offset-4"
             >
               {item.link.startsWith("#") ? (
-                <HashLink smooth to={item.link}>
-                  {item.name}
-                </HashLink>
+                location.pathname === "/" ? (
+                  // Use HashLink when already on the homepage
+                  <HashLink smooth to={item.link}>
+                    {item.name}
+                  </HashLink>
+                ) : (
+                  // Navigate back to the homepage and then scroll
+                  <a onClick={() => handleNavClick(item.link)}>{item.name}</a>
+                )
               ) : (
-                <Link to={item.link}>{item.name}</Link>
+                <Link onClick={scrollToTop} to={item.link}>
+                  {item.name}
+                </Link>
               )}
             </li>
           ))}
@@ -86,6 +123,6 @@ export default function Header() {
           aria-label="Open Menu"
         />
       )}
-    </header>
+    </motion.header>
   );
 }

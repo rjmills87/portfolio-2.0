@@ -1,5 +1,5 @@
+import Button from "./Button";
 import { ArrowUpRightCircle } from "iconoir-react";
-import { Link } from "react-router-dom";
 
 export default function Project({ name, description, screenshot, alt, src }) {
   return (
@@ -7,15 +7,19 @@ export default function Project({ name, description, screenshot, alt, src }) {
       <img
         src={screenshot}
         alt={alt}
-        className="w-auto h-auto rounded-lg border-dotted border-2 p-5 border-blue-600 border-opacity-70"
+        className="w-auto h-auto rounded-lg border-dotted border-2 p-5 mb-4 border-blue-600 border-opacity-70"
       />
-      <Link to={src} className="flex items-center gap-3 py-4">
-        <h3 className="text-2xl lg:text-3xl font-bold">{name}</h3>
-        <span className="text-blue-600 rounded-full p-1 border-blue-600 border-1 transition duration-300 hover:bg-blue-600 hover:text-white">
-          <ArrowUpRightCircle strokeWidth={2} />
-        </span>
-      </Link>
-      <p className="text-lg font-light">{description}</p>
+      <h3 className="text-2xl lg:text-3xl font-bold">
+        {name}
+        <span className="text-blue-600">.</span>
+      </h3>
+      <p className="text-lg font-light mb-4">{description}</p>
+      <Button
+        btnText="View"
+        variant="toProject"
+        href={src}
+        icon={ArrowUpRightCircle}
+      />
     </>
   );
 }
