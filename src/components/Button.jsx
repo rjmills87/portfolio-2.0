@@ -1,4 +1,5 @@
 import { HashLink } from "react-router-hash-link";
+import { motion } from "framer-motion";
 
 export default function Button({
   btnText,
@@ -9,7 +10,7 @@ export default function Button({
   ...props
 }) {
   const baseStyles =
-    "px-4 py-2 rounded-lg font-medium items-center justify-center transition ease-in-out duration-500";
+    "px-4 py-2 rounded-lg font-medium items-center justify-center";
 
   const variantStyles = {
     resumeDownloadMobile:
@@ -32,23 +33,31 @@ export default function Button({
 
   if (download === true) {
     return (
-      <a className={style} href={href} download={download} {...props}>
-        {btnText}
-        {Icon && <Icon className="ml-2" />}
-      </a>
-    );
-  } else {
-    return (
-      <HashLink
+      <motion.a
         className={style}
-        smooth
-        to={href}
+        href={href}
         download={download}
         {...props}
+        whileHover={{ y: -5, x: 3 }}
       >
         {btnText}
         {Icon && <Icon className="ml-2" />}
-      </HashLink>
+      </motion.a>
+    );
+  } else {
+    return (
+      <motion.div className="w-fit" whileHover={{ y: -5, x: 3 }}>
+        <HashLink
+          className={style}
+          smooth
+          to={href}
+          download={download}
+          {...props}
+        >
+          {btnText}
+          {Icon && <Icon className="ml-2" />}
+        </HashLink>
+      </motion.div>
     );
   }
 }
