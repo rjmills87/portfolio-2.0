@@ -20,7 +20,7 @@ export default function Hero() {
             <span className="text-blue-600">Front</span>end Developer
             <span className="text-blue-600">.</span>
           </h1>
-          <p className="text-2xl lg:text-3xl text-gray-600 font-light pb-8 leading-7">
+          <p className="text-1xl lg:text-2xl lg:w-3/4 text-gray-600 font-light pb-8 leading-7">
             I love to craft websites that are both visually appealing and
             user-friendly.
           </p>
@@ -46,7 +46,7 @@ export default function Hero() {
           className="rounded-full border-solid border-2 p-5 border-blue-600 border-opacity-70"
         >
           <img
-            className="rounded-full max-h-[500px] w-auto border-dotted border-2 p-5 border-blue-600 border-opacity-70"
+            className="rounded-full max-h-[475px] w-auto border-dotted border-2 p-5 border-blue-600 border-opacity-70"
             src="/src/assets/images/profile-pic.png"
             alt="Rhys Miller"
           />

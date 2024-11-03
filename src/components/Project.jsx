@@ -9,7 +9,7 @@ export default function Project({ name, description, screenshot, alt, src }) {
         alt={alt}
         className="w-auto h-auto rounded-lg border-dotted border-2 p-5 mb-4 border-blue-600 border-opacity-70"
       />
-      <h3 className="text-2xl lg:text-3xl font-bold">
+      <h3 className="text-2xl lg:text-3xl mb-4 font-bold">
         {name}
         <span className="text-blue-600">.</span>
       </h3>
