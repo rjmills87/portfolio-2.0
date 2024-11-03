@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "@web3forms/react";
 import { SendMail } from "iconoir-react";
+import { motion } from "framer-motion";
 
 export default function ContactForm() {
   const {
@@ -122,9 +123,10 @@ export default function ContactForm() {
           )}
         </div>
 
-        <button
+        <motion.button
           type="submit"
-          className="w-fit flex items-center px-4 py-2 rounded-lg font-medium text-white transition duration-300 bg-blue-600  hover:bg-blue-700 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200"
+          className="w-fit flex items-center px-4 py-2 rounded-lg font-medium text-white bg-blue-600  hover:bg-blue-700 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200"
+          whileHover={{ y: -5, x: 3 }}
         >
           {isSubmitting ? (
             <svg
@@ -151,7 +153,7 @@ export default function ContactForm() {
             "Send Message"
           )}
           <SendMail className="ml-2" />
-        </button>
+        </motion.button>
       </form>
 
       {isSubmitSuccessful && isSuccess && (
