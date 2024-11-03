@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import Button from "../components/Button";
 import { ArrowUpRightCircle, ArrowLeftCircle } from "iconoir-react";
+import { motion } from "framer-motion";
+import animations from "../animations/animations";
 
 export default function ProjectPage({ projects }) {
   const { id } = useParams();
@@ -14,18 +16,32 @@ export default function ProjectPage({ projects }) {
   return (
     <>
       <section className="project-details flex flex-col items-center p-6 lg:p-20">
-        <h1 className="text-4xl lg:text-5xl font-bold mb-10 text-center">
+        <motion.h1
+          className="text-4xl lg:text-5xl font-bold mb-10 text-center"
+          initial="hidden"
+          animate="visible"
+          variants={animations.popInVariant}
+        >
           {project.name}
           <span className="text-blue-600">.</span>
-        </h1>
+        </motion.h1>
 
-        <img
+        <motion.img
           src={project.screenshot}
           alt={project.name}
           className="w-full lg:w-2/3 h-auto rounded-lg border-dotted border-2 p-5 border-blue-600 border-opacity-70 mb-8"
+          initial="hidden"
+          animate="visible"
+          variants={animations.slideInVariant}
         />
 
-        <div className="markdown-content">
+        <motion.div
+          className="markdown-content"
+          variants={animations.fadeInVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <ReactMarkdown
             components={{
               h3: ({ ...props }) => (
@@ -51,8 +67,14 @@ export default function ProjectPage({ projects }) {
           >
             {project.description}
           </ReactMarkdown>
-        </div>
-        <div className="m-6 my-20 lg:mx-20">
+        </motion.div>
+        <motion.div
+          className="m-6 my-20 lg:mx-20"
+          variants={animations.fadeInVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <h3 className="text-3xl lg:text-4xl font-bold mb-10 text-center">
             Technology Used<span className="text-blue-600">.</span>
           </h3>
@@ -76,8 +98,14 @@ export default function ProjectPage({ projects }) {
                 </div>
               ))}
           </div>
-        </div>
-        <div className="flex gap-4 mb-10">
+        </motion.div>
+        <motion.div
+          className="flex gap-4 mb-10"
+          variants={animations.fadeInVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <Button
             btnText="Live Site"
             variant="projectPage"
@@ -92,7 +120,7 @@ export default function ProjectPage({ projects }) {
             target="_blank"
             icon={ArrowUpRightCircle}
           />
-        </div>
+        </motion.div>
         <Button
           btnText="Back"
           variant="backButton"
