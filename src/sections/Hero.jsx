@@ -6,7 +6,7 @@ import animations from "../animations/animations";
 export default function Hero() {
   return (
     <>
-      <div className="flex flex-col lg:flex-row items-center justify-between mx-6 my-32 gap-12 lg:mx-20">
+      <div className="flex flex-col lg:flex-row items-center justify-between mx-6 mb-32 mt-24 gap-12 lg:mx-20">
         <motion.div
           initial="hidden"
           animate="visible"

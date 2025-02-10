@@ -40,7 +40,7 @@ export default function Header() {
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
         }
-      }, 100); // Allow time for the home page to render
+      }, 100);
     }
   };
 
@@ -82,16 +82,32 @@ export default function Header() {
             >
               {item.link.startsWith("#") ? (
                 location.pathname === "/" ? (
-                  // Use HashLink when already on the homepage
-                  <HashLink smooth to={item.link}>
+                  <HashLink
+                    smooth
+                    to={item.link}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
                     {item.name}
                   </HashLink>
                 ) : (
                   // Navigate back to the homepage and then scroll
-                  <a onClick={() => handleNavClick(item.link)}>{item.name}</a>
+                  <a
+                    onClick={() => {
+                      handleNavClick(item.link);
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    {item.name}
+                  </a>
                 )
               ) : (
-                <Link onClick={scrollToTop} to={item.link}>
+                <Link
+                  onClick={() => {
+                    scrollToTop();
+                    setIsMenuOpen(false);
+                  }}
+                  to={item.link}
+                >
                   {item.name}
                 </Link>
               )}
